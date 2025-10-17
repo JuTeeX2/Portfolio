@@ -1,0 +1,36 @@
+@use '../helpers' as *;
+
+.soc1als {
+  &__list {
+    display: flex;
+    column-gap: rem(54);
+
+    @include tablet {
+      column-gap: rem(38);
+    }
+  
+    @include mobile {
+      column-gap: rem(20);
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    --size: #{rem(22)};
+
+    @include square(var(--size));
+
+    color: var(--color-svg);
+
+    @include tablet {
+      --size: #{rem(16)};
+    }
+  }
+
+  &--accent {
+    color: var(--color-purple2);
+  }
+}
