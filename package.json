@@ -1,18 +1,27 @@
 {
-  "name": "eatly",
-  "version": "1.0.0",
+  "name": "portfolio",
+  "version": "1.0.1",
+  "description": "",
+  "homepage": "https://github.com/JuTeeX2/Portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/JuTeeX2/Portfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuTeeX2/Portfolio.git"
+  },
+  "license": "ISC",
+  "author": "MoiRon",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass-watch": "sass --watch ."
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "sass": "^1.86.0"
-  },
   "dependencies": {
     "@a1rth/css-normalize": "^1.1.9"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
   }
 }

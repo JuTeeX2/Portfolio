@@ -1,17 +1,11 @@
 @use 'helpers' as *;
 
 :root{
-  --color-light: #F9F9F9;
+  --color-light: #FFFFFF; 
+  --color-light2: #F9F9F9; 
   --color-dark: #000000;
   --color-gray: #CBCBCB;
   --color-footer: #EAEAEA;
-
-  --color-purple: #5144A0;
-  --color-purple1: #5C4EAE;
-  --color-purple2: #6C5FBC;
-  --color-purple3: #6155AE;
-  --color-purple4: #C5BFED;
-  --color-purple5: #DBD9EE;
 
   --color-star: #F59E0B;
   --color-star_text: #334155;
@@ -19,19 +13,11 @@
   --color-text: #606060;
   --color-text1: #636363;
   --color-text2: #969696;
-  --color-text3: #878787;
-  --color-text4: #999999;
-  --color-text5: #F7F8FA;
-  --color-text6: #FFFFFF;
-  --color-text7: #ACADB9;
-  --color-text8: #8E97A6;
-  --color-text9: #676767;
 
   --color-h1: #18181B;
-  --color-h2: #1A202C;
-  --color-h3: #323142;
+  --color-h2: #606060;
+  --color-h3: #030314;
   --color-h4: #201F1F;
-  --color-h5: #030314;
 
   --color-svg: #081420;
 
@@ -39,12 +25,12 @@
   --font-family-accent: 'Poppins', sans-serif;
   --font-family-accent2: 'Manrope', sans-serif;
   
-  --container-width: #{rem(1250)};
-  --container-padding-x: #{rem(30)};
+  --container-width: #{rem(1200)};
+  --container-padding-x: #{rem(20)};
 
   --transition-duration: .2s;
   
   @include tablet {
-    --container-width: #{rem(890)};
+    --container-width: #{rem(810)};
   }
 }
