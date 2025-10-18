@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @include fluid-text(18, 11.1);
+  @include fluid-text(16, 11.1);
 
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   color: var(--color-h1);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h1, .h1,
@@ -37,17 +37,17 @@ h3, .h3 {
 }
 
 h1, .h1 {
-  @include fluid-text(75, 46.24);
+  @include fluid-text(22, 46.24);
 
-  letter-spacing: -0.04em;
-  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
 }
 
 h2, .h2 {
-  @include fluid-text(50.92, 30);
+  @include fluid-text(20, 30);
 
-  line-height: 1.14;
-  font-weight: 700;
+  line-height: 1.3;
 }
 
 h3, .h3 {

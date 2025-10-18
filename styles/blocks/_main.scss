@@ -1,0 +1,19 @@
+@use '../helpers' as *;
+
+.hero__content{
+  padding-top: rem(30);
+
+  display: grid;
+  gap: rem(10);
+
+  &-profile{
+    width: 100px;
+    height: 100px;
+    background: #000;
+  }
+
+  &-body{
+    position: relative;
+    font-size: rem(16);
+  }
+}

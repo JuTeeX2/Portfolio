@@ -296,10 +296,9 @@ body {
 
 :root {
   --color-light: #FFFFFF;
-  --color-light2: #F9F9F9;
   --color-dark: #000000;
   --color-gray: #CBCBCB;
-  --color-footer: #EAEAEA;
+  --color-footer: #F9F9F9;
   --color-star: #F59E0B;
   --color-star_text: #334155;
   --color-text: #606060;
@@ -360,7 +359,7 @@ html.is-lock {
 }
 
 body {
-  font-size: clamp(0.69375rem, 0.5838235294rem + 0.4509803922vw, 1.125rem);
+  font-size: clamp(0.69375rem, 0.6156862745rem + 0.3202614379vw, 1rem);
   display: flex;
   flex-direction: column;
   font-family: var(--font-family-base);
@@ -379,7 +378,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   color: var(--color-h1);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h1, .h1,
@@ -389,15 +388,15 @@ h3, .h3 {
 }
 
 h1, .h1 {
-  font-size: clamp(2.89rem, 2.4318137255rem + 1.8797385621vw, 4.6875rem);
-  letter-spacing: -0.04em;
-  line-height: 1.2;
+  font-size: clamp(2.89rem, 3.2761764706rem + -1.5843137255vw, 1.375rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
 }
 
 h2, .h2 {
-  font-size: clamp(1.875rem, 1.5417156863rem + 1.3673202614vw, 3.1825rem);
-  line-height: 1.14;
-  font-weight: 700;
+  font-size: clamp(1.875rem, 2.0343137255rem + -0.6535947712vw, 1.25rem);
+  line-height: 1.3;
 }
 
 h3, .h3 {
@@ -555,13 +554,9 @@ button[aria-label]::before {
 }
 .header__body {
   position: relative;
-  padding-top: 3rem;
-  padding-bottom: 1.5625rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--color-gray);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 6.25rem;
 }
 @media (width <= 47.99875rem) {
   .header__body {
@@ -570,9 +565,8 @@ button[aria-label]::before {
 }
 .header__overlay {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  justify-items: end;
 }
 @media (width <= 47.99875rem) {
   .header__overlay {
@@ -598,18 +592,12 @@ button[aria-label]::before {
   }
 }
 .header__menu-list {
-  display: flex;
-  align-items: center;
-  column-gap: 2.375rem;
-}
-@media (width <= 47.99875rem) {
-  .header__menu-list {
-    flex-direction: column;
-    row-gap: 1rem;
-  }
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 1.25rem;
 }
 .header__menu-link {
-  color: var(--color-text);
+  color: var(--color-text2);
   font-weight: 500;
 }
 .header__menu-link.is-active {
@@ -662,12 +650,12 @@ button[aria-label]::before {
   background-color: var(--color-footer);
 }
 .footer__body {
-  padding-block: clamp(3.4375rem, 2.8799019608rem + 2.2875816993vw, 5.625rem);
-  padding-bottom: 1.8125rem;
+  padding-block: clamp(3.4375rem, 2.7205882353rem + 2.9411764706vw, 6.25rem);
+  padding-bottom: 1.875rem;
   border-bottom: var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  align-content: center;
   border-bottom: 0.0625rem solid var(--color-gray);
 }
 @media (width <= 30.06125rem) {
@@ -696,10 +684,15 @@ button[aria-label]::before {
     display: contents;
   }
 }
+.footer__menu_item {
+  display: flex;
+  flex-direction: column;
+}
 .footer__menu-list {
   display: flex;
   align-items: center;
-  column-gap: 4.375rem;
+  justify-content: flex-end;
+  column-gap: 3.0625rem;
 }
 @media (width <= 30.06125rem) {
   .footer__menu-list {
@@ -713,7 +706,7 @@ button[aria-label]::before {
   }
 }
 .footer__menu-link {
-  color: var(--color-text);
+  color: var(--color-text2);
   font-weight: 500;
 }
 .footer__extra {
@@ -734,6 +727,10 @@ button[aria-label]::before {
     display: contents;
   }
 }
+.footer__copyright {
+  display: flex;
+  align-items: end;
+}
 @media (width <= 30.06125rem) {
   .footer__copyright {
     text-align: center;
@@ -742,6 +739,21 @@ button[aria-label]::before {
     padding: 1.625rem 0 2.25rem;
     border-top: 0.0625rem solid var(--color-gray);
   }
+}
+
+.hero__content {
+  padding-top: 1.875rem;
+  display: grid;
+  gap: 0.625rem;
+}
+.hero__content-profile {
+  width: 100px;
+  height: 100px;
+  background: #000;
+}
+.hero__content-body {
+  position: relative;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */
