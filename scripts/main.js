@@ -1,5 +1,5 @@
 "use strict";
 
-import Header from "./Header.js"
+// import Header from "./Header.js"
 
-new Header()
+// new Header()

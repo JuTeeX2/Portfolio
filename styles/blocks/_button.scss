@@ -20,15 +20,15 @@
   }
 
   &--accent {
-    background-color: var(--color-purple2);
+    background-color: var(--color-star_text);
     color: var(--color-light);
     border-radius: rem(18);
     font-weight: 700;
     
     &:hover {
-      color: var(--color-purple2);
-      border-color: var(--color-purple2);
-      background-color: var(--color-text6);
+      color: var(--color-star_text);
+      border-color: var(--color-star_text);
+      background-color: var(--color-text2);
     }
   }
 }

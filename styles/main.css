@@ -295,44 +295,31 @@ body {
 }
 
 :root {
-  --color-light: #F9F9F9;
+  --color-light: #FFFFFF;
+  --color-light2: #F9F9F9;
   --color-dark: #000000;
   --color-gray: #CBCBCB;
   --color-footer: #EAEAEA;
-  --color-purple: #5144A0;
-  --color-purple1: #5C4EAE;
-  --color-purple2: #6C5FBC;
-  --color-purple3: #6155AE;
-  --color-purple4: #C5BFED;
-  --color-purple5: #DBD9EE;
   --color-star: #F59E0B;
   --color-star_text: #334155;
   --color-text: #606060;
   --color-text1: #636363;
   --color-text2: #969696;
-  --color-text3: #878787;
-  --color-text4: #999999;
-  --color-text5: #F7F8FA;
-  --color-text6: #FFFFFF;
-  --color-text7: #ACADB9;
-  --color-text8: #8E97A6;
-  --color-text9: #676767;
   --color-h1: #18181B;
-  --color-h2: #1A202C;
-  --color-h3: #323142;
+  --color-h2: #606060;
+  --color-h3: #030314;
   --color-h4: #201F1F;
-  --color-h5: #030314;
   --color-svg: #081420;
   --font-family-base: "Inter", sans-serif;
   --font-family-accent: "Poppins", sans-serif;
   --font-family-accent2: "Manrope", sans-serif;
-  --container-width: 78.125rem;
-  --container-padding-x: 1.875rem;
+  --container-width: 75rem;
+  --container-padding-x: 1.25rem;
   --transition-duration: .2s;
 }
 @media (width <= 63.99875rem) {
   :root {
-    --container-width: 55.625rem;
+    --container-width: 50.625rem;
   }
 }
 
@@ -377,7 +364,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--font-family-base);
-  color: var(--color-text9);
+  color: var(--color-text1);
   background-color: var(--color-light);
 }
 
@@ -391,7 +378,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  color: var(--color-h3);
+  color: var(--color-h1);
   font-weight: 600;
 }
 
@@ -447,16 +434,16 @@ svg * {
 }
 
 a {
-  color: var(--color-text7);
+  color: var(--color-text);
 }
 @media (any-hover: hover) {
   a:hover {
-    color: var(--color-purple2);
+    color: var(--color-star_text);
   }
 }
 @media (any-hover: none) {
   a:active {
-    color: var(--color-purple2);
+    color: var(--color-star_text);
   }
 }
 a[class] {
@@ -464,7 +451,7 @@ a[class] {
 }
 
 :focus-visible {
-  outline: 0.125rem dashed var(--color-purple2);
+  outline: 0.125rem dashed var(--color-star_text);
   outline-offset: 0.25rem;
   transition-duration: 0s !important;
 }
@@ -510,15 +497,15 @@ button[aria-label]::before {
   }
 }
 .button--accent {
-  background-color: var(--color-purple2);
+  background-color: var(--color-star_text);
   color: var(--color-light);
   border-radius: 1.125rem;
   font-weight: 700;
 }
 .button--accent:hover {
-  color: var(--color-purple2);
-  border-color: var(--color-purple2);
-  background-color: var(--color-text6);
+  color: var(--color-star_text);
+  border-color: var(--color-star_text);
+  background-color: var(--color-text2);
 }
 
 .burger-button {
@@ -626,7 +613,7 @@ button[aria-label]::before {
   font-weight: 500;
 }
 .header__menu-link.is-active {
-  color: var(--color-purple2);
+  color: var(--color-star_text);
   pointer-events: none;
 }
 .header__form {
@@ -668,7 +655,7 @@ button[aria-label]::before {
   }
 }
 .soc1als--accent {
-  color: var(--color-purple2);
+  color: var(--color-star_text);
 }
 
 .footer {
