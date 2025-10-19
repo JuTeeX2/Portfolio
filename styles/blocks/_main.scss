@@ -1,19 +1,28 @@
 @use '../helpers' as *;
 
 .hero__content{
-  padding-top: rem(30);
-
   display: grid;
-  gap: rem(10);
+  gap: fluid(10,5);
+  padding-top: fluid(30,10);
+  border-bottom: 1px solid var(--color-gray);
 
   &-profile{
-    width: 100px;
-    height: 100px;
-    background: #000;
+    @include square(rem(150));
+    border-radius: 50%;
+
+    @include mobile {
+      @include square(rem(60));
+    }
   }
 
-  &-body{
+  &-body h2{
     position: relative;
-    font-size: rem(16);
+    width: fluid(800,600);
+    @include fluid-text(22,8);
+    color: var(--color-h2);
+
+    @include mobile{
+      width: rem(300);
+    }
   }
 }
