@@ -1,28 +1,107 @@
 @use '../helpers' as *;
 
-.hero__content{
-  display: grid;
-  gap: fluid(10,5);
-  padding-top: fluid(30,10);
-  border-bottom: 1px solid var(--color-gray);
+//  hero id
 
-  &-profile{
-    @include square(rem(150));
-    border-radius: 50%;
+.hero{
 
+   &__content{
+   display: grid;
+   gap: fluid(10,5);
+   padding-top: fluid(30,10);
+   border-bottom: 1px solid var(--color-gray);
+
+   &-profile{
+     @include square(rem(150));
+     background-color: var(--color-img);
+     object-fit: cover;
+     border-radius: 50%;
+
+     @include mobile {
+       @include square(rem(60));
+     }
+   }
+
+   &-body h2{
+     position: relative;
+     width: fluid(800,600);
+     @include fluid-text(22,8);
+     color: var(--color-h2);
+
+     @include mobile{
+       width: rem(300);
+     }
+   }
+  }
+}
+
+// projects id
+
+.projects{
+  background-color: var(--color-light);
+
+  &__overlay{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: fluid(40,10);
+  }
+
+  &__filter{
     @include mobile {
-      @include square(rem(60));
+      overflow-y: auto;
+    }
+    &-list{
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: fluid(20,10);
+    }
+
+    &-link{
+      color: var(--color-text1);
+      font-weight: 500;
+
+      &.is-active {
+        color: var(--color-star_text);
+        pointer-events: none;
+      }
     }
   }
 
-  &-body h2{
+  &__content{
     position: relative;
-    width: fluid(800,600);
-    @include fluid-text(22,8);
-    color: var(--color-h2);
+    padding-block: fluid(30,10);   
 
-    @include mobile{
-      width: rem(300);
+    &-site{
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 50%;
+      gap: rem(10);
+
+      @include mobile{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &_item{
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+    }
+
+    &-name{
+      @include fluid-text(18,12);
+    }
+
+    &-img{
+      background-color: var(--color-img);
+      border-radius: rem(10);
+      object-fit:cover;
+      @include square(rem(475));
+      @include mobile {
+        width: 100%;
+        height: rem(150);
+      }
     }
   }
 }

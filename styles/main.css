@@ -309,6 +309,7 @@ body {
   --color-h3: #030314;
   --color-h4: #201F1F;
   --color-svg: #081420;
+  --color-img: #F5F5F5;
   --font-family-base: "Inter", sans-serif;
   --font-family-accent: "Poppins", sans-serif;
   --font-family-accent2: "Manrope", sans-serif;
@@ -359,7 +360,7 @@ html.is-lock {
 }
 
 body {
-  font-size: clamp(0.75rem, 0.6862745098rem + 0.2614379085vw, 1rem);
+  font-size: clamp(0.75rem, 0.6544117647rem + 0.3921568627vw, 1.125rem);
   display: flex;
   flex-direction: column;
   font-family: var(--font-family-base);
@@ -692,6 +693,8 @@ button[aria-label]::before {
 .hero__content-profile {
   width: 9.375rem;
   height: 9.375rem;
+  background-color: var(--color-img);
+  object-fit: cover;
   border-radius: 50%;
 }
 @media (width <= 47.99875rem) {
@@ -709,6 +712,71 @@ button[aria-label]::before {
 @media (width <= 47.99875rem) {
   .hero__content-body h2 {
     width: 18.75rem;
+  }
+}
+
+.projects {
+  background-color: var(--color-light);
+}
+.projects__overlay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: clamp(0.625rem, 0.1470588235rem + 1.9607843137vw, 2.5rem);
+}
+@media (width <= 47.99875rem) {
+  .projects__filter {
+    overflow-y: auto;
+  }
+}
+.projects__filter-list {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: clamp(0.625rem, 0.4656862745rem + 0.6535947712vw, 1.25rem);
+}
+.projects__filter-link {
+  color: var(--color-text1);
+  font-weight: 500;
+}
+.projects__filter-link.is-active {
+  color: var(--color-star_text);
+  pointer-events: none;
+}
+.projects__content {
+  position: relative;
+  padding-block: clamp(0.625rem, 0.306372549rem + 1.3071895425vw, 1.875rem);
+}
+.projects__content-site {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 50%;
+  gap: 0.625rem;
+}
+@media (width <= 47.99875rem) {
+  .projects__content-site {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.projects__content_item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.projects__content-name {
+  font-size: clamp(0.75rem, 0.6544117647rem + 0.3921568627vw, 1.125rem);
+}
+.projects__content-img {
+  background-color: var(--color-img);
+  border-radius: 0.625rem;
+  object-fit: cover;
+  width: 29.6875rem;
+  height: 29.6875rem;
+}
+@media (width <= 47.99875rem) {
+  .projects__content-img {
+    width: 100%;
+    height: 9.375rem;
   }
 }
 
