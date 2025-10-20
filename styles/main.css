@@ -310,10 +310,7 @@ body {
   --color-h4: #201F1F;
   --color-svg: #081420;
   --color-img: #F5F5F5;
-<<<<<<< HEAD
-=======
   --border: 1px solid var(--color-gray);
->>>>>>> d7c5929 (push projects id in main block)
   --font-family-base: "Inter", sans-serif;
   --font-family-accent: "Poppins", sans-serif;
   --font-family-accent2: "Manrope", sans-serif;
@@ -726,11 +723,7 @@ button[aria-label]::before {
   width: 100%;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-  padding-top: clamp(0.625rem, 0.1470588235rem + 1.9607843137vw, 2.5rem);
-=======
   padding-top: clamp(0.625rem, 0.306372549rem + 1.3071895425vw, 1.875rem);
->>>>>>> d7c5929 (push projects id in main block)
 }
 @media (width <= 47.99875rem) {
   .projects__filter {
@@ -758,10 +751,7 @@ button[aria-label]::before {
   width: 100%;
   display: grid;
   grid-template-columns: auto 50%;
-<<<<<<< HEAD
-=======
   justify-items: center;
->>>>>>> d7c5929 (push projects id in main block)
   gap: 0.625rem;
 }
 @media (width <= 47.99875rem) {
@@ -792,8 +782,6 @@ button[aria-label]::before {
   }
 }
 
-<<<<<<< HEAD
-=======
 .filter__buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -831,5 +819,4 @@ button[aria-label]::before {
   pointer-events: none;
 }
 
->>>>>>> d7c5929 (push projects id in main block)
 /*# sourceMappingURL=main.css.map */
