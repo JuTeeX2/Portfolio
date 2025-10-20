@@ -1,0 +1,71 @@
+@use '../helpers' as *;
+
+// projects filter
+
+.filter{
+
+  &__buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(20);
+    padding-block: fluid(15,10);
+  }
+
+  &__button{
+    padding: fluid(20,12) rem(130);
+    border: var(--border);
+    border-radius: rem(8);
+    font-size: rem(18);
+    background-color: transparent;
+    color: var(--color-text3);
+
+    @include mobile{
+      font-size: rem(14);
+    }
+
+    @include hover{
+      color: var(--color-star_text);
+      border-color: var(--color-star_text);
+    }
+
+    &.is-active{
+      background-color: var(--color-gray);
+      color: var(--color-dark);
+      pointer-events: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+// .projects__overlay{
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   padding-top: fluid(40,10);
+// }
+
+// .projects__filter{
+//   @include mobile {
+//     overflow-y: auto;
+//   }
+//   &-list{
+//     display: grid;
+//     grid-auto-flow: column;
+//     column-gap: fluid(20,10);
+//   }
+
+//   &-link{
+//     color: var(--color-text1);
+//     font-weight: 500;
+
+//     &.is-active {
+//       color: var(--color-star_text);
+//       pointer-events: none;
+//     }
+//   }
+// }

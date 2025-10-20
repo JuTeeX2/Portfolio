@@ -310,6 +310,10 @@ body {
   --color-h4: #201F1F;
   --color-svg: #081420;
   --color-img: #F5F5F5;
+<<<<<<< HEAD
+=======
+  --border: 1px solid var(--color-gray);
+>>>>>>> d7c5929 (push projects id in main block)
   --font-family-base: "Inter", sans-serif;
   --font-family-accent: "Poppins", sans-serif;
   --font-family-accent2: "Manrope", sans-serif;
@@ -722,7 +726,11 @@ button[aria-label]::before {
   width: 100%;
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
   padding-top: clamp(0.625rem, 0.1470588235rem + 1.9607843137vw, 2.5rem);
+=======
+  padding-top: clamp(0.625rem, 0.306372549rem + 1.3071895425vw, 1.875rem);
+>>>>>>> d7c5929 (push projects id in main block)
 }
 @media (width <= 47.99875rem) {
   .projects__filter {
@@ -750,6 +758,10 @@ button[aria-label]::before {
   width: 100%;
   display: grid;
   grid-template-columns: auto 50%;
+<<<<<<< HEAD
+=======
+  justify-items: center;
+>>>>>>> d7c5929 (push projects id in main block)
   gap: 0.625rem;
 }
 @media (width <= 47.99875rem) {
@@ -780,4 +792,44 @@ button[aria-label]::before {
   }
 }
 
+<<<<<<< HEAD
+=======
+.filter__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.25rem;
+  padding-block: clamp(0.625rem, 0.5453431373rem + 0.3267973856vw, 0.9375rem);
+}
+.filter__button {
+  padding: clamp(0.75rem, 0.6225490196rem + 0.522875817vw, 1.25rem) 8.125rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  background-color: transparent;
+  color: var(--color-text3);
+}
+@media (width <= 47.99875rem) {
+  .filter__button {
+    font-size: 0.875rem;
+  }
+}
+@media (any-hover: hover) {
+  .filter__button:hover {
+    color: var(--color-star_text);
+    border-color: var(--color-star_text);
+  }
+}
+@media (any-hover: none) {
+  .filter__button:active {
+    color: var(--color-star_text);
+    border-color: var(--color-star_text);
+  }
+}
+.filter__button.is-active {
+  background-color: var(--color-gray);
+  color: var(--color-dark);
+  pointer-events: none;
+}
+
+>>>>>>> d7c5929 (push projects id in main block)
 /*# sourceMappingURL=main.css.map */

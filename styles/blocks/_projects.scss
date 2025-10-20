@@ -1,0 +1,74 @@
+@use '../helpers' as *;
+
+// projects id
+
+.projects{
+  background-color: var(--color-light);
+
+  &__overlay{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: fluid(30,10);
+  }
+
+  &__filter{
+    @include mobile {
+      overflow-y: auto;
+    }
+    &-list{
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: fluid(20,10);
+    }
+
+    &-link{
+      color: var(--color-text1);
+      font-weight: 500;
+
+      &.is-active {
+        color: var(--color-star_text);
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__content{
+    position: relative;
+    padding-block: fluid(30,10);  
+
+    &-site{
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 50%;
+      justify-items: center;
+      gap: rem(10);
+
+      @include mobile{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &_item{
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+    }
+
+    &-name{
+      @include fluid-text(18,12);
+    }
+
+    &-img{
+      background-color: var(--color-img);
+      border-radius: rem(10);
+      object-fit:cover;
+      @include square(rem(475));
+      @include mobile {
+        width: 100%;
+        height: rem(150);
+      }
+    }
+  }
+}
