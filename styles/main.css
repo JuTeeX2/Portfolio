@@ -356,6 +356,9 @@ body {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
 html.is-lock {
   overflow: hidden;
 }
@@ -542,6 +545,8 @@ button[aria-label]::before {
 .header {
   position: sticky;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
   background-color: var(--color-light);
   animation-name: scrolling-header;
@@ -553,6 +558,14 @@ button[aria-label]::before {
   to {
     box-shadow: 0 0 0.1rem var(--color-gray);
   }
+}
+.header__bg {
+  position: absolute;
+  inset: 0;
+  top: auto;
+  height: 13rem;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, #fff 100%), url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/skyline.png) repeat-x 50% 100%/650px auto;
+  z-index: -1;
 }
 .header__body {
   position: relative;
@@ -742,12 +755,15 @@ button[aria-label]::before {
 .projects__content-panel {
   width: 100%;
   display: grid;
-  grid-template-columns: auto 50%;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
-  gap: 0.625rem;
+  gap: 2.5rem;
 }
 .projects__content-panel:not(.is-active) {
   display: none;
+}
+.projects__content-panel:focus-visible {
+  outline-offset: none;
 }
 @media (width <= 47.99875rem) {
   .projects__content-panel {
@@ -759,16 +775,25 @@ button[aria-label]::before {
   display: flex;
   flex-direction: column;
   gap: 0.9375rem;
-  border: var(--border);
+  padding: 0.625rem;
   border-radius: 0.6875rem;
+  cursor: pointer;
+}
+.projects__content_item:hover {
+  outline: auto;
+  outline-color: var(--color-gray);
 }
 .projects__content-name {
   font-size: clamp(0.75rem, 0.6544117647rem + 0.3921568627vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.3rem;
 }
 .projects__content-img {
+  position: relative;
   background-color: var(--color-img);
   border-radius: 0.625rem;
   object-fit: cover;
+  align-self: center;
   width: 31.25rem;
   height: 31.25rem;
   height: clamp(9.375rem, 6.1887254902rem + 13.0718954248vw, 21.875rem);
@@ -790,7 +815,7 @@ button[aria-label]::before {
   padding: clamp(0.75rem, 0.6225490196rem + 0.522875817vw, 1.25rem);
   border: var(--border);
   border-radius: 0.5rem;
-  font-size: 1.125rem;
+  font-size: 1.375rem;
   background-color: transparent;
   color: var(--color-text3);
 }

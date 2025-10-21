@@ -3,6 +3,8 @@
 .header {
   position: sticky;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
   background-color: var(--color-light);
   animation-name: scrolling-header;
@@ -14,6 +16,16 @@
     to {
       box-shadow: 0 0 .1rem var(--color-gray);
     }
+  }
+
+  &__bg{
+    position: absolute;
+    inset: 0;
+    top: auto;
+    height: 13rem;
+    background: linear-gradient(to bottom, #fff6 0%, #fff 100%),
+    url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/skyline.png) repeat-x 50% 100% / 650px auto;
+    z-index: -1;
   }
 
   &__body {
