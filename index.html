@@ -2,18 +2,18 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portflio</title>
-    <link rel="stylesheet" href="./styles/main.css" />
-    <script src="./scripts/main.js" type="module" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portflio</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+  <script src="./scripts/main.js" type="module" defer></script>
 </head>
 
 <body>
-    <header class="header" data-js-header>
-        <div class="container">
-            <div class="header__body">
-                <!-- <a href="/" class="header__logo logo" aria-label="Home" title="Home">
+  <header class="header" data-js-header>
+    <div class="container">
+      <div class="header__body">
+        <!-- <a href="/" class="header__logo logo" aria-label="Home" title="Home">
             <img
               src="./images/logo.svg"
               alt=""
@@ -23,23 +23,23 @@
             />
           </a> -->
 
-                <div class="header__overlay" data-js-header-overlay>
-                    <nav class="header__menu">
-                        <ul class="header__menu-list">
-                            <li class="header__menu_item">
-                                <a href="#hero" class="header__menu-link">Главная</a>
-                            </li>
-                            <li class="header__menu_item">
-                                <a href="#projects" class="header__menu-link">Проекты</a>
-                            </li>
-                            <li class="header__menu_item">
-                                <a href="#" class="header__menu-link">Контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
+        <div class="header__overlay" data-js-header-overlay>
+          <nav class="header__menu">
+            <ul class="header__menu-list">
+              <li class="header__menu_item">
+                <a href="#hero" class="header__menu-link">Главная</a>
+              </li>
+              <li class="header__menu_item">
+                <a href="#projects" class="header__menu-link">Проекты</a>
+              </li>
+              <li class="header__menu_item">
+                <a href="#" class="header__menu-link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
 
-                    <!-- Burger from mobile -->
-                    <!-- <button
+          <!-- Burger from mobile -->
+          <!-- <button
             class="header__burger-button burger-button visible-mobile"
             aria-label="Open menu"
             title="Open menu"
@@ -49,77 +49,80 @@
             <span class="burger-button__line"></span>
             <span class="burger-button__line"></span>
           </button> -->
-                </div>
-            </div>
-    </header>
-    <main>
-      <div id="hero">
+        </div>
+      </div>
+  </header>
+  <main>
+    <div id="hero">
+      <div class="container">
+        <div class="hero__content">
+          <img src="http://dummyimage.com/1920x1080" alt="" class="hero__content-profile">
+          <div class="hero__content-body">
+            <h1>Гарипов Димитрий Артемович</h1>
+            <h2>
+              Для создания сайта-портфолио применен полнофункциональный стек:
+              от верстки на HTML, SCSS и JavaScript до
+              работы с данными.
+              PostgreSQL обеспечивает надежное хранение контента,
+              а Redis — мгновенную работу с кэшем. Процесс
+              разработки и развертывания унифицирован с помощью
+              npm и Docker.
+            </h2>
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <section id="projects" class="projects" aria-labelledby="projects-title">
         <div class="container">
-          <div class="hero__content">
-            <img src="http://dummyimage.com/1920x1080" alt="" class="hero__content-profile">
-            <div class="hero__content-body">
-              <h1>Гарипов Димитрий Артемович</h1>
-              <h2>
-                Для создания сайта-портфолио применен полнофункциональный стек: 
-                от верстки на HTML, SCSS и JavaScript до 
-                работы с данными. 
-                PostgreSQL обеспечивает надежное хранение контента, 
-                а Redis — мгновенную работу с кэшем. Процесс 
-                разработки и развертывания унифицирован с помощью 
-                npm и Docker.
-              </h2>
+          <div class="projects__overlay filter" data-js-filter>
+            <h3 class="visually-hidden" id="projects-category-title">Проекты</h3>
+            <header class="filter__header">
+              <div class="filter__buttons" role="tablist" aria-labelledby="projects-category-title">
+                <button class="filter__button is-active" type="button" id="tab-1" role="tab" aria-controls="tabpanel-1"
+                  data-js-filter-button aria-selected="true">
+                  Сайты
+                </button>
+                <button class="filter__button" type="button" id="tab-2" role="tab" aria-controls="tabpanel-2"
+                  data-js-filter-button aria-selected="false" tabindex="-1">
+                  Маркетплейсы
+                </button>
+              </div>
+            </header>
+            <div class="projects__content">
+              <div class="projects__content-panel is-active" id="tabpanel-1" aria-labelledby="tab-1" tabindex="0"
+                data-js-filter-content>
+                <div class="projects__content_item">
+                  <img src="http://dummyimage.com/1920x1080" alt="" class="projects__content-img">
+                  <h3 class="projects__content-name">Philly’s Ice Cream</h3>
+                  <time datetime="2023">2023</time>
+                </div>
+                <div class="projects__content_item">
+                  <img src="http://dummyimage.com/475" alt="" class="projects__content-img">
+                  <h3 class="projects__content-name">Gaston: Lighting under a new light</h3>
+                  <time datetime="2022">2022</time>
+                </div>
+                <div class="projects__content_item">
+                  <img src="http://dummyimage.com/900" alt="" class="projects__content-img">
+                  <h3 class="projects__content-name">Sensaya: Beauty for everyone</h3>
+                  <time datetime="2021">2021</time>
+                </div>
+              </div>
+              <!-- <div class="projects__content-panel" id="tabpanel-2" aria-labelledby="tab-2" tabindex="0"
+                data-js-filter-content>
+                <h3 class="projects__content-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quod earum soluta, similique laborum reiciendis delectus quisquam repellendus, sed, molestiae quia. Expedita in voluptate optio laborum iusto dicta impedit exercitationem.</h3>
+                <time datetime="2020">2020</time>
+              </div> -->
             </div>
           </div>
         </div>
       </section>
-
-      <section id="projects" class="projects" aria-labelledby="projects-title">
-          <div class="container">
-              <div class="projects__overlay filter" data-js-filter>
-                  <h3 class="visually-hidden" id="projects-category-title">Проекты</h3>
-                  <header class="filter__header">
-                      <div class="filter__buttons" role="tablist" aria-labelledby="projects-category-title">
-                          <button class="filter__button is-active" type="button" id="tab-1" role="tab" aria-controls="tabpanel-1" data-js-filter-button aria-selected="true">
-                Сайты
-              </button>
-                          <button class="filter__button" type="button" id="tab-2" role="tab" aria-controls="tabpanel-2" data-js-filter-button aria-selected="false" tabindex="-1">
-                Маркетплейсы
-              </button>
-                      </div>
-                  </header>
-              </div>
-              <div class="projects__content">
-                  <div class="projects__content-site is-active" id="tabpanel-1" aria-labelledby="tab-1" tabindex="0" data-js-filter-content>
-                      <div class="projects__content_item">
-                          <img src="http://dummyimage.com/1920x1080" alt="" class="projects__content-img">
-                          <h3 class="projects__content-name">Philly’s Ice Cream</h3>
-                          <time datetime="2023">2023</time>
-                      </div>
-                      <div class="projects__content_item">
-                          <img src="http://dummyimage.com/475" alt="" class="projects__content-img">
-                          <h3 class="projects__content-name">Gaston: Lighting under a new light</h3>
-                          <time datetime="2022">2022</time>
-                      </div>
-                      <div class="projects__content_item">
-                          <img src="http://dummyimage.com/900" alt="" class="projects__content-img">
-                          <h3 class="projects__content-name">Sensaya: Beauty for everyone</h3>
-                          <time datetime="2021">2021</time>
-                      </div>
-                  </div>
-                  <div class="projects__content-2" id="tabpanel-2" aria-labelledby="tab-2" tabindex="0" data-js-filter-content>
-                      <img src="http://dummyimage.com/1024x720" alt="" class="projects__content-img">
-                      <h3 class="projects__content-name">LeBlink: Skincare for the modern age</h3>
-                      <time datetime="2020">2020</time>
-                  </div>
-              </div>
-          </div>
-      </section>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__mobile">
-                <div class="footer__body">
-                    <!-- <a
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__mobile">
+        <div class="footer__body">
+          <!-- <a
               href="/"
               class="footer__logo logo"
               aria-label="Home"
@@ -133,32 +136,32 @@
                 height="43"
               />
             </a> -->
-                    <p class="footer__copyright">
-                        ©&nbsp;<time datetime="2025">2025</time>&nbsp;EATLY All Rights Reserved.
-                    </p>
-                    <nav class="footer__menu">
-                        <ul class="footer__menu-list">
-                            <li class="footer__menu_item">
-                                <h6 class="footer__menu-head">Главная</h6>
-                                <a href="#" class="footer__menu-link">Проекты</a>
-                                <a href="#" class="footer__menu-link">Контакты</a>
-                            </li>
-                            <li class="footer__menu_item">
-                                <h6 class="footer__menu-head">О себе</h6>
-                                <a href="#" class="footer__menu-link">Биография</a>
-                                <a href="#" class="footer__menu-link">Образование</a>
-                            </li>
-                            <li class="footer__menu_item">
-                                <h6 class="footer__menu-head">Контакты</h6>
-                                <a href="#" class="footer__menu-link">Github</a>
-                                <a href="#" class="footer__menu-link">LinkedIn</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+          <p class="footer__copyright">
+            ©&nbsp;<time datetime="2025">2025</time>&nbsp;EATLY All Rights Reserved.
+          </p>
+          <nav class="footer__menu">
+            <ul class="footer__menu-list">
+              <li class="footer__menu_item">
+                <h6 class="footer__menu-head">Главная</h6>
+                <a href="#" class="footer__menu-link">Проекты</a>
+                <a href="#" class="footer__menu-link">Контакты</a>
+              </li>
+              <li class="footer__menu_item">
+                <h6 class="footer__menu-head">О себе</h6>
+                <a href="#" class="footer__menu-link">Биография</a>
+                <a href="#" class="footer__menu-link">Образование</a>
+              </li>
+              <li class="footer__menu_item">
+                <h6 class="footer__menu-head">Контакты</h6>
+                <a href="#" class="footer__menu-link">Github</a>
+                <a href="#" class="footer__menu-link">LinkedIn</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
