@@ -56,7 +56,7 @@
       <div id="hero">
         <div class="container">
           <div class="hero__content">
-            <img src="" alt="" class="hero__content-profile">
+            <img src="http://dummyimage.com/1920x1080" alt="" class="hero__content-profile">
             <div class="hero__content-body">
               <h1>Гарипов Димитрий Артемович</h1>
               <h2>
@@ -71,26 +71,49 @@
             </div>
           </div>
         </div>
-        <div id="projects">
-          <div class="container">
-            <div class="projects__overlay">
-              <nav class="projects__filter">
-                <ul class="projects__filter-list">
-                  <li class="projects__filter-item">
-                    <a href="#" class="projects__filter-link">Сайты</a>
-                  </li>
-                  <li class="projects__filter-item">
-                    <a href="#" class="projects__filter-link">Маркетплейсы</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="projects__content">
+      </section>
 
-            </div>
+      <section id="projects" class="projects" aria-labelledby="projects-title">
+          <div class="container">
+              <div class="projects__overlay filter" data-js-filter>
+                  <h3 class="visually-hidden" id="projects-category-title">Проекты</h3>
+                  <header class="filter__header">
+                      <div class="filter__buttons" role="tablist" aria-labelledby="projects-category-title">
+                          <button class="filter__button is-active" type="button" id="tab-1" role="tab" aria-controls="tabpanel-1" data-js-filter-button aria-selected="true">
+                Сайты
+              </button>
+                          <button class="filter__button" type="button" id="tab-2" role="tab" aria-controls="tabpanel-2" data-js-filter-button aria-selected="false" tabindex="-1">
+                Маркетплейсы
+              </button>
+                      </div>
+                  </header>
+              </div>
+              <div class="projects__content">
+                  <div class="projects__content-site is-active" id="tabpanel-1" aria-labelledby="tab-1" tabindex="0" data-js-filter-content>
+                      <div class="projects__content_item">
+                          <img src="http://dummyimage.com/1920x1080" alt="" class="projects__content-img">
+                          <h3 class="projects__content-name">Philly’s Ice Cream</h3>
+                          <time datetime="2023">2023</time>
+                      </div>
+                      <div class="projects__content_item">
+                          <img src="http://dummyimage.com/475" alt="" class="projects__content-img">
+                          <h3 class="projects__content-name">Gaston: Lighting under a new light</h3>
+                          <time datetime="2022">2022</time>
+                      </div>
+                      <div class="projects__content_item">
+                          <img src="http://dummyimage.com/900" alt="" class="projects__content-img">
+                          <h3 class="projects__content-name">Sensaya: Beauty for everyone</h3>
+                          <time datetime="2021">2021</time>
+                      </div>
+                  </div>
+                  <div class="projects__content-2" id="tabpanel-2" aria-labelledby="tab-2" tabindex="0" data-js-filter-content>
+                      <img src="http://dummyimage.com/1024x720" alt="" class="projects__content-img">
+                      <h3 class="projects__content-name">LeBlink: Skincare for the modern age</h3>
+                      <time datetime="2020">2020</time>
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>
+      </section>
     </main>
     <footer class="footer">
         <div class="container">
