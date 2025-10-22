@@ -548,60 +548,78 @@ button[aria-label]::before {
   left: 0;
   width: 100%;
   z-index: 100;
+  padding: 1.25rem;
   background-color: var(--color-light);
-  animation-name: scrolling-header;
-  animation-fill-mode: both;
-  animation-timeline: scroll();
-  animation-range: 6.25rem 12.5rem;
-}
-@keyframes scrolling-header {
-  to {
-    box-shadow: 0 0 0.1rem var(--color-gray);
-  }
+  animation: add-shadow linear both;
 }
 .header__bg {
   position: absolute;
   inset: 0;
   top: auto;
-  height: 13rem;
+  height: 20rem;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, #fff 100%), url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/skyline.png) repeat-x 50% 100%/650px auto;
   z-index: -1;
 }
 .header__body {
   position: relative;
   padding-block: clamp(0.5rem, 0.2450980392rem + 1.045751634vw, 1.5rem);
-  border-bottom: 0.0625rem solid var(--color-gray);
 }
-.header__overlay {
-  width: 100%;
+.header__info {
   display: grid;
-  justify-items: end;
+  align-items: end;
+  grid-template-columns: clamp(3.75rem, 2.3161764706rem + 5.8823529412vw, 9.375rem) auto;
+  gap: clamp(0.0625rem, -0.431372549rem + 2.0261437908vw, 2rem);
 }
-@media (width <= 47.99875rem) {
-  .header__menu {
-    overflow-y: auto;
+.header__info_avatar {
+  border-radius: 50%;
+  border: 0.3rem solid var(--color-light);
+  float: left;
+  width: 150;
+  height: 150;
+}
+@keyframes adjust-info {
+  to {
+    grid-template-columns: 5.625rem auto;
+    gap: 1rem;
+    height: auto;
+    height: 4.375rem;
   }
 }
-.header__menu-list {
-  display: grid;
-  grid-auto-flow: column;
-  column-gap: 1.25rem;
+@keyframes shrink-name {
+  to {
+    font-size: 1.5rem;
+  }
 }
-.header__menu-link {
-  color: var(--color-text2);
-  font-weight: 500;
+@keyframes add-shadow {
+  to {
+    box-shadow: 0 0 0.3125rem var(--color-gray);
+  }
 }
-.header__menu-link.is-active {
-  color: var(--color-star_text);
-  pointer-events: none;
+@keyframes move-and-fade-background {
+  to {
+    translate: 0 -5%;
+    scale: 0.9;
+    opacity: 0.3;
+  }
 }
-.header__form {
-  display: flex;
-  column-gap: 1rem;
+@supports (animation-timeline: scroll()) {
+  .header .header__info {
+    animation: adjust-info linear both;
+  }
+  .header .header__info h2 {
+    animation: shrink-name linear both;
+  }
+  .header .header__bg {
+    animation: move-and-fade-background linear both;
+  }
+  .header .header__info, .header .header__info h2, .header .header, .header .header__bg {
+    animation-timeline: scroll();
+    animation-range: 0 9.375rem;
+  }
 }
-@media (width <= 63.99875rem) {
-  .header__form {
-    column-gap: 0;
+@supports not (animation-timeline: scroll()) {
+  .header .header {
+    box-shadow: 0 0 0.1rem var(--color-gray);
   }
 }
 

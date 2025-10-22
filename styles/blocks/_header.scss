@@ -1,43 +1,123 @@
 @use '../helpers' as *;
 
+  
 .header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
+  padding: rem(20);
   background-color: var(--color-light);
-  animation-name: scrolling-header;
-  animation-fill-mode: both;
-  animation-timeline: scroll();
-  animation-range: rem(100) rem(200);
+  animation: add-shadow linear both;
+  // animation-name: scrolling-header;
+  // animation-fill-mode: both;
+  // animation-timeline: scroll();
+  // animation-range: rem(100) rem(200);
 
-  @keyframes scrolling-header {
-    to {
-      box-shadow: 0 0 .1rem var(--color-gray);
-    }
-  }
+  // @keyframes scrolling-header {
+  //   to {
+  //     box-shadow: 0 0 .1rem var(--color-gray);
+  //   }
+  // }
 
   &__bg{
     position: absolute;
     inset: 0;
     top: auto;
-    height: 13rem;
+    height: 20rem;
     background: linear-gradient(to bottom, #fff6 0%, #fff 100%),
-    url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/skyline.png) repeat-x 50% 100% / 650px auto;
+    url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/skyline.png)
+    repeat-x 50% 100% / 650px auto;
     z-index: -1;
   }
 
   &__body {
     position: relative;
     padding-block: fluid(24,8);
-    border-bottom: rem(1) solid var(--color-gray);
+    // border-bottom: rem(1) solid var(--color-gray);
   }
 
-  &__overlay {
-    width: 100%;
+  &__info {
     display: grid;
-    justify-items: end;
+    align-items: end;
+    grid-template-columns: fluid(150,60) auto;
+    gap: fluid(32,1);
+
+    &_avatar {
+      border-radius: 50%;
+      border: 0.3rem solid var(--color-light);
+      float: left;
+      @include square(150);
+
+    // &_meta {
+    //   display: flex  ;
+    //   flex-direction: row;
+    //   gap: 0.75rem;
+    //   font-style: italic;
+    //   padding-bottom: 0.75rem;
+    //   opacity: 0.8;
+    // }
+  }
+}
+
+// animation header
+@keyframes adjust-info {
+  to {
+    grid-template-columns: rem(90) auto;
+    gap: rem(16);
+    height: auto;
+    height: rem(70);
+  }
+}
+@keyframes shrink-name {
+  to { font-size: 1.5rem; }
+}
+@keyframes add-shadow {
+  to {  box-shadow: 0 0 rem(5) var(--color-gray); }
+}
+@keyframes move-and-fade-background {
+  to {
+    translate: 0 -5%;
+    scale: 0.9;
+    opacity: 0.3;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .header__info {
+    animation: adjust-info linear both;
+  }
+  .header__info h2 {
+    animation: shrink-name linear both;
+  }
+  .header__bg  {
+    animation: move-and-fade-background linear both;
+  }
+  .header__info, .header__info h2, .header, .header__bg {
+    animation-timeline: scroll();
+    animation-range: 0 rem(150);
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .header {
+    box-shadow: 0 0 .1rem var(--color-gray);
+  }
+  // .header {
+  //   position: fixed;
+  //   left: 0;
+  //   right: 0;
+  // }
+  // .header + * {
+  //   margin-top: rem(190);
+  // }
+}
+
+  // &__overlay {
+  //   width: 100%;
+  //   display: grid;
+  //   justify-items: end;
 
     // @include mobile {
     //   position: fixed;
@@ -58,33 +138,33 @@
     // }
   }
 
-  &__menu {
-    @include mobile {
-      overflow-y: auto;
-    }
-    &-list {
-      display: grid;
-      grid-auto-flow: column;
-      column-gap: rem(20);
-    }
+  // &__menu {
+  //   @include mobile {
+  //     overflow-y: auto;
+  //   }
+  //   &-list {
+  //     display: grid;
+  //     grid-auto-flow: column;
+  //     column-gap: rem(20);
+  //   }
 
-    &-link {
-      color: var(--color-text2);
-      font-weight: 500;
+  //   &-link {
+  //     color: var(--color-text2);
+  //     font-weight: 500;
 
-      &.is-active {
-        color: var(--color-star_text);
-        pointer-events: none;
-      }
-    }
-  }
+  //     &.is-active {
+  //       color: var(--color-star_text);
+  //       pointer-events: none;
+  //     }
+  //   }
+  // }
 
-  &__form {
-    display: flex;
-    column-gap: 1rem;
+  // &__form {
+  //   display: flex;
+  //   column-gap: 1rem;
     
-    @include tablet {
-      column-gap: 0;
-    }
-  }
-}
+  //   @include tablet {
+  //     column-gap: 0;
+  //   }
+  // }
+// }
