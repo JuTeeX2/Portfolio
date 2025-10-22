@@ -842,4 +842,39 @@ button[aria-label]::before {
   pointer-events: none;
 }
 
+.contact {
+  background-color: var(--color-light);
+}
+.contact__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-block: clamp(1.875rem, -0.0367647059rem + 7.8431372549vw, 9.375rem);
+}
+.contact__group .error {
+  opacity: 0;
+  visibility: hidden;
+}
+.contact__group_form {
+  display: grid;
+  gap: 0.3125rem;
+}
+.contact__group-mail {
+  align-self: center;
+}
+.contact__group-mail #email {
+  outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
+
 /*# sourceMappingURL=main.css.map */

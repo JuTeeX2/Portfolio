@@ -1,0 +1,34 @@
+@use '../helpers' as *;
+
+.contact {
+    background-color: var(--color-light);
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-block: fluid(150,30);
+    }
+
+    &__group {
+        
+        .error {
+            @include hide();
+        }
+
+        &_form {
+            display: grid;
+            // grid-template-columns: 30% auto;
+            gap: rem(5);
+        }
+
+        &-mail {
+            align-self: center;
+
+            #email {
+                outline: none;
+            }
+        }
+    }
+}
