@@ -3,23 +3,35 @@
 .header {
   position: sticky;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
   background-color: var(--color-light);
-  // animation-name: scrolling-header;
-  // animation-fill-mode: both;
-  // animation-timeline: scroll();
-  // animation-range: rem(100) rem(200);
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: rem(100) rem(200);
 
-  // @keyframes scrolling-header {
-  //   to {
-  //     box-shadow: 0 0 .1rem var(--color-gray);
-  //   }
-  // }
+  @keyframes scrolling-header {
+    to {
+      box-shadow: 0 0 .1rem var(--color-gray);
+    }
+  }
+
+  &__bg{
+    position: absolute;
+    inset: 0;
+    top: auto;
+    height: 13rem;
+    background: linear-gradient(to bottom, #fff6 0%, #fff 100%),
+    url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/skyline.png) repeat-x 50% 100% / 650px auto;
+    z-index: -1;
+  }
 
   &__body {
     position: relative;
     padding-block: fluid(24,8);
-    border-bottom: 1px solid var(--color-gray);
+    border-bottom: rem(1) solid var(--color-gray);
   }
 
   &__overlay {

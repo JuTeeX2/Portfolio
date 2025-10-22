@@ -5,69 +5,71 @@
 .projects{
   background-color: var(--color-light);
 
-  &__overlay{
+  &__overlay {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding-top: fluid(30,10);
   }
 
-  &__filter{
-    @include mobile {
-      overflow-y: auto;
-    }
-    &-list{
-      display: grid;
-      grid-auto-flow: column;
-      column-gap: fluid(20,10);
-    }
-
-    &-link{
-      color: var(--color-text1);
-      font-weight: 500;
-
-      &.is-active {
-        color: var(--color-star_text);
-        pointer-events: none;
-      }
-    }
-  }
-
-  &__content{
+  &__content {
     position: relative;
     padding-block: fluid(30,10);  
 
-    &-site{
+    &-panel {
       width: 100%;
       display: grid;
-      grid-template-columns: auto 50%;
+      grid-template-columns: 1fr 1fr;
       justify-items: center;
-      gap: rem(10);
+      gap: rem(40);
 
-      @include mobile{
+            
+      &:not(.is-active) {
+        display: none;
+      }
+
+      &:focus-visible {
+        outline-offset: none;
+      }
+
+      @include mobile {
         display: flex;
         flex-direction: column;
       }
     }
 
-    &_item{
+    &_item {
       display: flex;
       flex-direction: column;
-      gap: rem(10);
+      gap: rem(15);
+      padding: rem(10);
+      border-radius: rem(11);
+      cursor: pointer;
     }
 
-    &-name{
+    &_item:hover {
+      outline: auto;
+      outline-color: var(--color-gray)
+    }
+
+    &-name {
       @include fluid-text(18,12);
+      font-weight: 600;
+      line-height: 1.3rem;
     }
 
-    &-img{
+    &-img {
+      position: relative;
       background-color: var(--color-img);
       border-radius: rem(10);
-      object-fit:cover;
-      @include square(rem(475));
+      object-fit: cover;
+      align-self: center;
+      @include square(rem(500));
+      height: fluid(350,150);
       @include mobile {
         width: 100%;
-        height: rem(150);
+        height: rem(250);
       }
     }
   }

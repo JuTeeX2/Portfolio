@@ -28,7 +28,7 @@
      color: var(--color-h2);
 
      @include mobile{
-       width: rem(300);
+       width: 100%;
      }
    }
   }

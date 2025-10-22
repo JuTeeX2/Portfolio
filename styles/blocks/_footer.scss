@@ -48,7 +48,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      column-gap: rem(49);
+      column-gap: fluid(49,30);
 
       @include mobile-s {
         text-transform: uppercase;
