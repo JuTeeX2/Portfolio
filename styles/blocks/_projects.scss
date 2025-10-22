@@ -3,6 +3,7 @@
 // projects id
 
 .projects{
+  min-height: fluid(800,400);
   background-color: var(--color-light);
 
   &__overlay {
@@ -46,9 +47,11 @@
       padding: rem(10);
       border-radius: rem(11);
       cursor: pointer;
+      transition: transform .2s ease;
     }
 
     &_item:hover {
+      transform: scale(1.01);
       outline: auto;
       outline-color: var(--color-gray)
     }

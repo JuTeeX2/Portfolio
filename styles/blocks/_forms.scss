@@ -1,11 +1,5 @@
 @use '../helpers' as *;
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  border: 0;
+  @include visually-hidden();
 }

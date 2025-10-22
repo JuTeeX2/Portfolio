@@ -141,19 +141,19 @@
       <section id="contact" class="contact" aria-labelledby="contact-blog">
         <div class="container">
           <div class="contact__body">
-          <h3>На почту можете получить резюме</h3>
-          <div class="contact__group">
-            <form action="forms/email-list.php" class="contact__group_form">
-              <div class="contact__group-mail">
-                 <span class="material-symbols-outlined">mail</span>
-                 <label for="email" class="sr-only">Введите ваш email адрес:</label>
-                 <input type="email" id="email" placeholder="Введите ваш email адрес:"
-                 oninput="validateEmail()" onfocus="hideError()" pattern=".+@example\.com" size="30" name="user-email" required>
-              </div>
-              <div id="error-message" class="error">Некоректный адрес электронной почты</div>
-              <input type="button" value="Отправить" form="email">
-            </form>
-          </div>
+            <h3>На почту можете получить резюме</h3>
+            <div class="contact__group">
+              <form action="forms/email-list.php" class="contact__group_form">
+                <div class="contact__group-mail">
+                   <span class="material-symbols-outlined">mail</span>
+                   <label for="email" class="sr-only">Введите ваш email адрес:</label>
+                   <input type="email" id="email" placeholder="Введите ваш email адрес:"
+                   oninput="validateEmail()" onfocus="hideError()" pattern=".+@example\.com" size="30" name="user-email" required>
+                </div>
+                <div id="error-message" class="error">Некоректный адрес электронной почты</div>
+                <input type="button" value="Отправить" form="email">
+              </form>
+            </div>
           </div>
         </div>
       </section>

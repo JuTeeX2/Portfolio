@@ -547,10 +547,11 @@ button[aria-label]::before {
   top: 0;
   left: 0;
   width: 100%;
+  height: 9.25rem;
   z-index: 100;
   padding: 1.25rem;
+  background: 3.125rem;
   background-color: var(--color-light);
-  animation: add-shadow linear both;
 }
 .header__bg {
   position: absolute;
@@ -577,12 +578,12 @@ button[aria-label]::before {
   width: 150;
   height: 150;
 }
+
 @keyframes adjust-info {
   to {
     grid-template-columns: 5.625rem auto;
     gap: 1rem;
-    height: auto;
-    height: 4.375rem;
+    height: 0.625rem;
   }
 }
 @keyframes shrink-name {
@@ -598,31 +599,33 @@ button[aria-label]::before {
 @keyframes move-and-fade-background {
   to {
     translate: 0 -5%;
-    scale: 0.9;
+    scale: 0.96;
     opacity: 0.3;
   }
 }
 @supports (animation-timeline: scroll()) {
-  .header .header__info {
+  .header__info {
     animation: adjust-info linear both;
   }
-  .header .header__info h2 {
+  .header__info h2 {
     animation: shrink-name linear both;
   }
-  .header .header__bg {
+  .header {
+    animation: add-shadow linear both;
+  }
+  .header__bg {
     animation: move-and-fade-background linear both;
   }
-  .header .header__info, .header .header__info h2, .header .header, .header .header__bg {
+  .header__info, .header__info h2, .header, .header__bg {
     animation-timeline: scroll();
     animation-range: 0 9.375rem;
   }
 }
 @supports not (animation-timeline: scroll()) {
-  .header .header {
-    box-shadow: 0 0 0.1rem var(--color-gray);
+  .header {
+    box-shadow: 0 0 1.1rem var(--color-gray);
   }
 }
-
 .soc1als__list {
   display: flex;
   column-gap: 3.375rem;
@@ -757,6 +760,7 @@ button[aria-label]::before {
 }
 
 .projects {
+  min-height: clamp(25rem, 18.6274509804rem + 26.1437908497vw, 50rem);
   background-color: var(--color-light);
 }
 .projects__overlay {
@@ -796,8 +800,10 @@ button[aria-label]::before {
   padding: 0.625rem;
   border-radius: 0.6875rem;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 .projects__content_item:hover {
+  transform: scale(1.01);
   outline: auto;
   outline-color: var(--color-gray);
 }
@@ -886,13 +892,16 @@ button[aria-label]::before {
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  border: 0;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -6,20 +6,11 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: rem(148);
   z-index: 100;
   padding: rem(20);
+  background: rem(50);
   background-color: var(--color-light);
-  animation: add-shadow linear both;
-  // animation-name: scrolling-header;
-  // animation-fill-mode: both;
-  // animation-timeline: scroll();
-  // animation-range: rem(100) rem(200);
-
-  // @keyframes scrolling-header {
-  //   to {
-  //     box-shadow: 0 0 .1rem var(--color-gray);
-  //   }
-  // }
 
   &__bg{
     position: absolute;
@@ -60,14 +51,14 @@
     // }
   }
 }
+}
 
 // animation header
 @keyframes adjust-info {
   to {
     grid-template-columns: rem(90) auto;
     gap: rem(16);
-    height: auto;
-    height: rem(70);
+    height: rem(10);
   }
 }
 @keyframes shrink-name {
@@ -79,7 +70,7 @@
 @keyframes move-and-fade-background {
   to {
     translate: 0 -5%;
-    scale: 0.9;
+    scale: 0.96;
     opacity: 0.3;
   }
 }
@@ -90,6 +81,9 @@
   }
   .header__info h2 {
     animation: shrink-name linear both;
+  }
+  .header{
+    animation: add-shadow linear both;
   }
   .header__bg  {
     animation: move-and-fade-background linear both;
@@ -102,8 +96,9 @@
 
 @supports not (animation-timeline: scroll()) {
   .header {
-    box-shadow: 0 0 .1rem var(--color-gray);
+    box-shadow: 0 0 1.1rem var(--color-gray);
   }
+}
   // .header {
   //   position: fixed;
   //   left: 0;
@@ -112,7 +107,7 @@
   // .header + * {
   //   margin-top: rem(190);
   // }
-}
+// }
 
   // &__overlay {
   //   width: 100%;
@@ -136,7 +131,7 @@
     //     translate: 100%;
     //   }
     // }
-  }
+  // }
 
   // &__menu {
   //   @include mobile {
