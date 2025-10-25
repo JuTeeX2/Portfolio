@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <header class="header" data-js-header>
+  <header id="#top" class="header" data-js-header>
     <div class="container">
       <div class="header__bg"></div>
       <div class="header__body">
@@ -68,7 +68,7 @@
           <!-- <img src="http://dummyimage.com/1920x1080" alt="avatar" class="hero__content-profile avatar"> -->
           <div class="hero__content-body">
             <!-- <h1>Гарипов Димитрий Артемович</h1> -->
-            <h2>
+            <p>
               Для создания сайта-портфолио применен полнофункциональный стек:
               от верстки на HTML, SCSS и JavaScript до
               работы с данными.
@@ -76,7 +76,7 @@
               а Redis — мгновенную работу с кэшем. Процесс
               разработки и развертывания унифицирован с помощью
               npm и Docker.
-            </h2>
+            </p>
           </div>
         </div>
       </div>
@@ -146,12 +146,12 @@
               <form action="forms/email-list.php" class="contact__group_form">
                 <div class="contact__group-mail">
                    <span class="material-symbols-outlined">mail</span>
-                   <label for="email" class="sr-only">Введите ваш email адрес:</label>
+                   <label for="email" class="visually-hidden">Введите ваш email адрес:</label>
                    <input type="email" id="email" placeholder="Введите ваш email адрес:"
                    oninput="validateEmail()" onfocus="hideError()" pattern=".+@example\.com" size="30" name="user-email" required>
                 </div>
                 <div id="error-message" class="error">Некоректный адрес электронной почты</div>
-                <input type="button" value="Отправить" form="email">
+                <input type="button" id="button__email" value="Отправить" form="email">
               </form>
             </div>
           </div>
@@ -160,6 +160,9 @@
   </main>
   <footer class="footer">
     <div class="container">
+      <!-- <div class="footer__go-top">
+        <a href="#top" class="footer__go-top_scroll" title="Back to Top"></a> 
+      </div> -->
       <div class="footer__mobile">
         <div class="footer__body">
           <!-- <a

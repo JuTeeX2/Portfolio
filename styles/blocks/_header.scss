@@ -6,18 +6,23 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: rem(148);
+  height: rem(130);
   z-index: 100;
   padding: rem(20);
   background: rem(50);
   background-color: var(--color-light);
+
+  @include mobile {
+    position: relative;
+    height: rem(80);
+  }
 
   &__bg{
     position: absolute;
     inset: 0;
     top: auto;
     height: 20rem;
-    background: linear-gradient(to bottom, #fff6 0%, #fff 100%),
+    background: linear-gradient(to bottom, #fff6 0%, var(--color-light) 100%),
     url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/skyline.png)
     repeat-x 50% 100% / 650px auto;
     z-index: -1;
@@ -25,21 +30,27 @@
 
   &__body {
     position: relative;
-    padding-block: fluid(24,8);
+    // padding-block: fluid(24,8);
     // border-bottom: rem(1) solid var(--color-gray);
   }
 
   &__info {
     display: grid;
     align-items: end;
-    grid-template-columns: fluid(150,60) auto;
+    grid-template-columns: fluid(150,70) auto;
     gap: fluid(32,1);
+    @include fluid-text(28,10);
 
     &_avatar {
       border-radius: 50%;
       border: 0.3rem solid var(--color-light);
       float: left;
       @include square(150);
+
+      @include mobile {
+        @include square(200);
+        border: 0.1rem solid var(--color-light);
+      }
 
     // &_meta {
     //   display: flex  ;
@@ -49,8 +60,8 @@
     //   padding-bottom: 0.75rem;
     //   opacity: 0.8;
     // }
+    }
   }
-}
 }
 
 // animation header
@@ -75,22 +86,24 @@
   }
 }
 
-@supports (animation-timeline: scroll()) {
-  .header__info {
-    animation: adjust-info linear both;
-  }
-  .header__info h2 {
-    animation: shrink-name linear both;
-  }
-  .header{
-    animation: add-shadow linear both;
-  }
-  .header__bg  {
-    animation: move-and-fade-background linear both;
-  }
-  .header__info, .header__info h2, .header, .header__bg {
-    animation-timeline: scroll();
-    animation-range: 0 rem(150);
+@include mobile-above {
+  @supports (animation-timeline: scroll()) {
+    .header__info {
+      animation: adjust-info linear both;
+    }
+    .header__info h2 {
+      animation: shrink-name linear both;
+    }
+    .header{
+      animation: add-shadow linear both;
+    }
+    .header__bg  {
+      animation: move-and-fade-background linear both;
+    }
+    .header__info, .header__info h2, .header, .header__bg {
+      animation-timeline: scroll();
+      animation-range: 0 rem(150);
+    }
   }
 }
 

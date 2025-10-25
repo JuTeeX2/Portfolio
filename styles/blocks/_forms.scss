@@ -1,5 +1,40 @@
 @use '../helpers' as *;
 
-.sr-only {
+.visually-hidden {
   @include visually-hidden();
+}
+
+.error {
+  @include hide();
+  color: var(--color-error);
+}
+
+#email {
+  width: 100%;
+  height: rem(50);
+  padding: 0 rem(20);
+  border: none;
+  border-radius: rem(5);
+  background-color: var(--color-gray);
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 rem(15) #7a956b;
+  }
+}
+
+#button__email {
+  width: 100%;
+  min-height: rem(50);
+  text-transform: uppercase;
+  border-radius: rem(20);
+  letter-spacing: rem(2);
+  font-weight: 700;
+  box-shadow: 0 rem(1) 0 var(--color-gray);
+  background-color: var(--color-light);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-gray);
+  }
 }

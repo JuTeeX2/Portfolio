@@ -9,26 +9,30 @@
         align-items: center;
         width: 100%;
         padding-block: fluid(150,30);
+
+        h3 {
+            @include fluid-text(24,16);
+        }
     }
 
     &__group {
-        
-        .error {
-            @include hide();
+        width: rem(500);
+        padding-block: rem(20);
+
+        @include mobile {
+            width: rem(260);
         }
 
         &_form {
             display: grid;
-            // grid-template-columns: 30% auto;
             gap: rem(5);
         }
 
         &-mail {
-            align-self: center;
-
-            #email {
-                outline: none;
-            }
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: rem(40);
         }
     }
 }

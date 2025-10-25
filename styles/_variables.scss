@@ -1,6 +1,18 @@
 @use 'helpers' as *;
 
 :root{
+/* CSS HEX */
+--night: #141515ff;
+--gunmetal: #1f332eff;
+--hookers-green: #4c6c54ff;
+--battleship-gray: #7c9390ff;
+--jet: #403a41ff;
+
+// #E2E0CB
+// #6E8370
+// #4F798F
+// #2F4C47
+  
   --color-light: #FFFFFF; 
   --color-dark: #000000;
   --color-gray: #CBCBCB;
@@ -8,6 +20,8 @@
 
   --color-star: #F59E0B;
   --color-star_text: #334155;
+  --color-star_hover: #6E8370;
+  --color-error: red;
 
   --color-text: #606060;
   --color-text1: #636363;
