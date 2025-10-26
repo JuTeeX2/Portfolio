@@ -6,14 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portflio</title>
   <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" />
+  <script src="./forms/nodemailer.js" type="module"></script>
   <script src="./scripts/main.js" type="module" defer></script>
 </head>
 
 <body>
-  <header class="header" data-js-header>
-    <div class="header__bg"></div>
+  <header id="#top" class="header" data-js-header>
     <div class="container">
+      <div class="header__bg"></div>
       <div class="header__body">
+        <div class="header__info">
+          <img src="images/1.jpg" alt="avatar" class="header__info_avatar">
+          <h2>Гарипов Димитрий Артемович</h2>
+          <!-- <ul class="header__info_meta">
+            <li>123</li>
+          </ul> -->
+        </div>
         <!-- <a href="/" class="header__logo logo" aria-label="Home" title="Home">
             <img
               src="./images/logo.svg"
@@ -24,7 +33,7 @@
             />
           </a> -->
 
-        <div class="header__overlay" data-js-header-overlay>
+        <!-- <div class="header__overlay" data-js-header-overlay>
           <nav class="header__menu">
             <ul class="header__menu-list">
               <li class="header__menu_item">
@@ -37,7 +46,7 @@
                 <a href="#" class="header__menu-link">Контакты</a>
               </li>
             </ul>
-          </nav>
+          </nav> -->
 
           <!-- Burger from mobile -->
           <!-- <button
@@ -57,10 +66,10 @@
     <div id="hero">
       <div class="container">
         <div class="hero__content">
-          <img src="http://dummyimage.com/1920x1080" alt="" class="hero__content-profile">
+          <!-- <img src="http://dummyimage.com/1920x1080" alt="avatar" class="hero__content-profile avatar"> -->
           <div class="hero__content-body">
-            <h1>Гарипов Димитрий Артемович</h1>
-            <h2>
+            <!-- <h1>Гарипов Димитрий Артемович</h1> -->
+            <p>
               Для создания сайта-портфолио применен полнофункциональный стек:
               от верстки на HTML, SCSS и JavaScript до
               работы с данными.
@@ -68,7 +77,7 @@
               а Redis — мгновенную работу с кэшем. Процесс
               разработки и развертывания унифицирован с помощью
               npm и Docker.
-            </h2>
+            </p>
           </div>
         </div>
       </div>
@@ -130,9 +139,32 @@
           </div>
         </div>
       </section>
+      <section id="contact" class="contact" aria-labelledby="contact-blog">
+        <div class="container">
+          <div class="contact__body">
+            <h3>На почту можете получить резюме</h3>
+            <div class="contact__group">
+              <form action="forms/nodemailer.js" method="post" class="contact__group_form" data-js-form>
+                <div class="contact__group-mail">
+                   <span class="material-symbols-outlined">mail</span>
+                   <label for="email" class="visually-hidden">Введите ваш email адрес:</label>
+                   <input type="email" id="email" placeholder="Введите ваш email адрес:" pattern=".+@*\.*" 
+                   size="30" title="example@email.com" name="user-email" aria-errormessage="email-errors">
+                </div>
+                <span id="email-errors" class="error" data-js-form-errors>Некоректный адрес электронной почты</span>
+                <!-- <button type="submit" id="button__email" form="email">Отправить</button> -->
+                <button type="submit" id="button__email" data-js-form-button>Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
   </main>
   <footer class="footer">
     <div class="container">
+      <!-- <div class="footer__go-top">
+        <a href="#top" class="footer__go-top_scroll" title="Back to Top"></a> 
+      </div> -->
       <div class="footer__mobile">
         <div class="footer__body">
           <!-- <a

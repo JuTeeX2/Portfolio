@@ -3,6 +3,31 @@
 .footer {
   background-color: var(--color-footer);
 
+  &__go-top {
+    @include abs-x();
+    border-radius: 100%;
+    background: var(--color-gray);
+
+    &_scroll {
+      font-size: rem(30);
+    }
+
+    &_scroll::after {
+      content: '\21D1';
+      @include square(rem(50));    
+      align-content: center;
+      text-align: center;
+    }
+
+    &_scroll:hover {
+      color: var(--color-star_hover);
+    }
+  }
+
+  &__go-top:hover {
+    background-color: var(--color-star);
+  }
+
   &__body {
     padding-block: fluid(60, 50);
     // padding-bottom: rem(30);
