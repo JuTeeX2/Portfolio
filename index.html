@@ -7,6 +7,7 @@
   <title>Portflio</title>
   <link rel="stylesheet" href="./styles/main.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" />
+  <script src="./forms/nodemailer.js" type="module"></script>
   <script src="./scripts/main.js" type="module" defer></script>
 </head>
 
@@ -143,15 +144,16 @@
           <div class="contact__body">
             <h3>На почту можете получить резюме</h3>
             <div class="contact__group">
-              <form action="forms/email-list.php" class="contact__group_form">
+              <form action="forms/nodemailer.js" method="post" class="contact__group_form" data-js-form>
                 <div class="contact__group-mail">
                    <span class="material-symbols-outlined">mail</span>
                    <label for="email" class="visually-hidden">Введите ваш email адрес:</label>
-                   <input type="email" id="email" placeholder="Введите ваш email адрес:"
-                   oninput="validateEmail()" onfocus="hideError()" pattern=".+@example\.com" size="30" name="user-email" required>
+                   <input type="email" id="email" placeholder="Введите ваш email адрес:" pattern=".+@*\.*" 
+                   size="30" title="example@email.com" name="user-email" aria-errormessage="email-errors">
                 </div>
-                <div id="error-message" class="error">Некоректный адрес электронной почты</div>
-                <input type="button" id="button__email" value="Отправить" form="email">
+                <span id="email-errors" class="error" data-js-form-errors>Некоректный адрес электронной почты</span>
+                <!-- <button type="submit" id="button__email" form="email">Отправить</button> -->
+                <button type="submit" id="button__email" data-js-form-button>Отправить</button>
               </form>
             </div>
           </div>
