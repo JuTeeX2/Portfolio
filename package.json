@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@a1rth/css-normalize": "^1.1.9",
+    "nodejs": "^0.0.0",
     "nodemailer": "^7.0.10"
   },
   "devDependencies": {
