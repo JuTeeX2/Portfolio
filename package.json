@@ -16,14 +16,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass-watch": "sass --watch ."
+    "sass-watch": "sass --watch .",
+    "start": "cd ./backend && nodemon ./index.js"
   },
   "dependencies": {
     "@a1rth/css-normalize": "^1.1.9",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
     "nodejs": "^0.0.0",
-    "nodemailer": "^7.0.10"
+    "nodemailer": "^7.0.10",
+    "pg": "^8.16.3"
   },
   "devDependencies": {
+    "nodemon": "^3.1.10",
     "sass": "^1.86.0"
   }
 }
